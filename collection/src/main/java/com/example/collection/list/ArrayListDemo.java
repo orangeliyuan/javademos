@@ -1,4 +1,4 @@
-package com.example.collection;
+package com.example.collection.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,11 +7,31 @@ import java.util.List;
 public class ArrayListDemo {
 
     public static void main(String[] args) {
+        List<String> l1 = new ArrayList<>();
+        List<String> l2 = new ArrayList<>();
+        l1.add("abc"); l1.add("123"); l2.add("abc");
+        System.out.println(l1.retainAll(l2));
+
+
+        int[] arr1 = {1,2,3,4,5};
+        int[] arr2 = Arrays.copyOf(arr1, 5);
+        //1 2 3 4 5
+        int[] arr3 = Arrays.copyOf(arr1, 10);
+        //1 2 3 4 5 0 0 0 0 0
+
+        char[] src = new String("hexxx").toCharArray();
+        char[] dest = new String("12345").toCharArray();
+        System.arraycopy(src, 1, dest, 0, 3);
+        // exx45
+        System.out.println(dest);
+
+
         String str = "str";
         String str1 = "str1";
         String str2 = "str2";
         String str3 = "str3";
         String strbak = "str";
+
 
         List<String> list = new ArrayList<>(8);
         list.add(str);
